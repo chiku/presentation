@@ -1,0 +1,21 @@
+Now some code
+-------------
+
+```ruby
+def a
+	(1..10).each do |i|
+		puts "Hello there everybody #{i}"
+	end
+end
+```
+
+And XML
+-------------
+
+```xml
+<hmmm>
+	<now>
+		<who likes="xml"/>
+	</now>
+</hmmm>
+```

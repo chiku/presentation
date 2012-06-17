@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+<head>
+  <title>SVN-Git migration</title>
+  <meta name="copyright" content="Copyright &#169; 2012 ThoughtWorks" />
+  <meta name="duration" content="30" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print" href="vendor/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" media="screen, projection, print" href="vendor/highlight/styles/default.css">
+  <script src="vendor/Slidy2/scripts/slidy.js" charset="utf-8" type="text/javascript"></script>
+  <script src="vendor/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+  TO-BE-REPLACED
+</body>
+</html>

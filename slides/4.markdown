@@ -1,0 +1,7 @@
+Try a table
+===========
+
+First Header|Second Header
+------------|-------------
+A|C
+B|D
