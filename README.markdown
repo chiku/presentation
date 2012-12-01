@@ -7,21 +7,17 @@ The glue script parses the markdown files inside _slides_ directory alphabetical
 Steps
 -----
 
-* You need to have ruby installed on the system.
+* You need to have ruby installed on the system
 
-* You should also install the markdown gem.
+* You should also install the markdown gem
 
 ```shell
 [sudo] gem install markdown
 ```
 
-* Create slides inside the directory _slides_.
+* Create slides inside the directory _slides_
   * The files have the file-extension __.markdown__
   * Each file will become a slide of its own
   * The slides will be ordered alphabetically based on the file name
 
-* Run rake to create _presentation.html_
-
-```shell
-rake
-```
+* Run `rake` to create _presentation.html_
