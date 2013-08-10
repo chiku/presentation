@@ -7,7 +7,7 @@ end
 
 class Slides
   def initialize
-    @slide_names ||= Dir.glob("slides/*.markdown").sort
+    @slide_names = Dir.glob("slides/*.markdown").sort
     @redcarpet = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
                                           :autolink => true,
                                           :space_after_headers => true,
@@ -16,7 +16,7 @@ class Slides
   end
 
   def markdowns
-    @markdowns ||= @slide_names.map do |slide|
+    @slide_names.map do |slide|
       File.open(slide, "r").read
     end
   end
@@ -33,7 +33,6 @@ class Slides
     File.open("presentation.html", "w").write(content_to_write)
   end
 end
-
 
 desc "Create presentaion.html"
 task :default do
