@@ -1,4 +1,9 @@
-require 'redcarpet'
+begin
+  require 'redcarpet'
+rescue LoadError
+  $stderr.puts "Please install redcarpet\n[sudo] gem install redcarpet"
+  exit 1
+end
 
 class Slides
   def initialize
