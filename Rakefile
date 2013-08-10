@@ -6,6 +6,12 @@ rescue LoadError
 end
 
 class Slides
+  class << self
+    def create
+      Slides.new.create
+    end
+  end
+
   def initialize
     @slide_names = Dir.glob("slides/*.markdown").sort
     @redcarpet = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
@@ -36,5 +42,5 @@ end
 
 desc "Create presentaion.html"
 task :default do
-  Slides.new.create
+  Slides.create
 end
