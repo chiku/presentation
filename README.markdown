@@ -15,10 +15,16 @@ Steps
 [sudo] gem install markdown
 ```
 
-* Create slides inside the directory _slides_
-  * The files have the file-extension __.markdown__
+* Clone the repository
+
+```shell
+git clone https://github.com/chiku/presentation.git
+```
+
+* Create slides inside _slides_ directory
+  * The slides must be in markdown format with file-extension __.markdown__
   * Each file will become a slide of its own
-  * The slides will be ordered alphabetically based on the file name
+  * The final slides will be ordered alphabetically based on the file names
 
 * Run `rake` from the project directory to create _presentation.html_
 
