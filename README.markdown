@@ -23,3 +23,10 @@ Steps
 * Run `rake` from the project directory to create _presentation.html_
 
 * Open _presentation.html_ in the browser of your choice
+
+License
+-------
+
+This tool is released under the MIT license. Please refer to LICENSE for more details.
+
+Slidy2 and highlight are released under their own respective licenses.
