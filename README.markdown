@@ -20,4 +20,6 @@ Steps
   * Each file will become a slide of its own
   * The slides will be ordered alphabetically based on the file name
 
-* Run `rake` to create _presentation.html_
+* Run `rake` from the project directory to create _presentation.html_
+
+* Open _presentation.html_ in the browser of your choice
