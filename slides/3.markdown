@@ -3,9 +3,9 @@ Now some code
 
 ```ruby
 def a
-	(1..10).each do |i|
-		puts "Hello there everybody #{i}"
-	end
+  (1..10).each do |i|
+    puts "Hello there everybody #{i}"
+  end
 end
 ```
 

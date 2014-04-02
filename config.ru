@@ -8,8 +8,7 @@ use Rack::Static,
   header_rules: [ [:all, {"Cache-Control" => "public, max-age=3600"}] ]
   
 headers = {
-  "Content-Type"   => "text/html",
-  "Content-Length" => "9"
+  "Content-Type"   => "text/html"
 }
 
 run ->(env) { [404, headers, ["Not Found"]] }

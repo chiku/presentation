@@ -1,24 +1,6 @@
-begin
-  require 'redcarpet'
-rescue LoadError
-  $stderr.puts "Please install redcarpet\n[sudo] gem install redcarpet"
-  exit 1
-end
-
 class Slides
-  class << self
-    def create
-      Slides.new.create
-    end
-  end
-
   def initialize
     @slide_names = Dir.glob("slides/*.markdown").sort
-    @redcarpet = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-                                          :autolink => true,
-                                          :space_after_headers => true,
-                                          :tables => true,
-                                          :fenced_code_blocks => true)
   end
 
   def markdowns
@@ -27,20 +9,18 @@ class Slides
     end
   end
 
-  def concatenated_html
-    @concatenated_html ||= markdowns.reduce("") do |html, markdown|
-      html << "\n<div class='slide'>\n#{@redcarpet.render(markdown)}\n</div>\n"
-    end
+  def concatenated_markdown
+    markdowns.join("\n\n---\n\n")
   end
 
   def create
     template = File.open("presentation.html.template", "r").read
-    content_to_write = template.sub('TO-BE-REPLACED', concatenated_html)
+    content_to_write = template.sub('TO-BE-REPLACED', concatenated_markdown)
     File.open("presentation.html", "w").write(content_to_write)
   end
 end
 
-desc "Create presentaion.html"
+desc "Create presentation.html"
 task :default do
-  Slides.create
+  Slides.new.create
 end

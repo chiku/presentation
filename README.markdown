@@ -1,24 +1,25 @@
-# Simple glue to create presentation from markdown files.
+# Glue to create presentation from markdown files.
 
-The markdown files ar converted to HTML using redcarpet. The HTML is displayed as a presentation using Slidy2. Highlight.js is used for syntax higlighting of code.
+The markdown files are concatenated and presented using [remark](https://github.com/gnab/remark).
 
-The glue script parses the markdown files inside _slides_ directory alphabetically and converts them to HTML. The HTML is inserted into _presentation.html.template_ to give the final output _presentation.html_. You can view _presentation.html_ in your browser.
+The glue script parses the markdown files inside _slides_ directory alphabetically and concatenates them. The concatenated markdown content is inserted into _presentation.html.template_ to give the final output _presentation.html_. You can view _presentation.html_ in your browser.
 
 Steps
 -----
 
-* You need to have ruby installed on the system
-
-* You should also install the markdown gem
-
-```shell
-[sudo] gem install markdown
-```
+* Install ruby
 
 * Clone the repository
 
 ```shell
 git clone https://github.com/chiku/presentation.git
+cd presentation
+```
+
+* Install dependencies using bundler
+
+```shell
+bundle install
 ```
 
 * Create slides inside _slides_ directory
@@ -26,13 +27,22 @@ git clone https://github.com/chiku/presentation.git
   * Each file will become a slide of its own
   * The final slides will be ordered alphabetically based on the file names
 
-* Run `rake` from the project directory to create _presentation.html_
+* Run `rake` to create _presentation.html_
 
-* Open _presentation.html_ in the browser of your choice
+```shell
+bundle exec rake
+```
+
+* Open _presentation.html_ in the browser of your choice OR serve over HTTP.
+
+```shell
+bundle exec rackup
+# visit http://localhost:9292
+```
 
 License
 -------
 
-This tool is released under the MIT license. Please refer to LICENSE for more details.
+This tool is released under the [MIT license](https://github.com/chiku/presentation/blob/master/LICENSE). Please refer to LICENSE for more details.
 
-Slidy2 and highlight are released under their own respective licenses.
+remark is released under [MIT license](https://github.com/gnab/remark/blob/develop/LICENSE).
