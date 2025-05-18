@@ -1,48 +1,61 @@
-# Glue to create presentation from markdown files.
+# Markdown-to-HTML Presentation Builder
 
-The markdown files are concatenated and presented using [remark](https://github.com/gnab/remark).
+Easily generate HTML presentations from Markdown files using [remark](https://github.com/gnab/remark).
 
-The glue script parses the markdown files inside _slides_ directory alphabetically and concatenates them. The concatenated markdown content is inserted into _presentation.html.template_ to give the final output _presentation.html_. You can view _presentation.html_ in your browser.
+This tool concatenates Markdown files from the `_slides` directory in alphabetical order and embeds the result into a template (`presentation.html.template`) to produce a final presentation file: `presentation.html`.
 
-Steps
------
+## Features
 
-* Install ruby
+- Simple workflow powered by Ruby and Rake
+- Uses [remark](https://github.com/gnab/remark) for in-browser slide rendering
+- Markdown-based slides — one file per slide
+- Alphabetical ordering of slides for predictable structure
 
-* Clone the repository
+## Getting Started
 
-```shell
-git clone https://github.com/chiku/presentation.git
-cd presentation
-```
+### Prerequisites
 
-* Install dependencies using bundler
+- Ruby (install via [rbenv](https://github.com/rbenv/rbenv) or your package manager)
+- Bundler
 
-```shell
-bundle install
-```
+### Installation
 
-* Create slides inside _slides_ directory
-  * The slides must be in markdown format with file-extension __.markdown__
-  * Each file will become a slide of its own
-  * The final slides will be ordered alphabetically based on the file names
+1. Clone the repository:
 
-* Run `rake` to create _presentation.html_
+    ```bash
+    git clone https://github.com/chiku/presentation.git
+    cd presentation
+    ```
 
-```shell
+2. Install dependencies:
+
+    ```bash
+    bundle install
+    ```
+
+### Creating Slides
+
+- Add `.markdown` files inside the `_slides` directory.
+- Each file represents one slide.
+- Files are processed in **alphabetical order** to determine slide sequence.
+
+### Building the Presentation
+
+Generate the `presentation.html` file:
+
+```bash
 bundle exec rake
 ```
 
-* Open _presentation.html_ in the browser of your choice OR serve over HTTP.
+Open the resulting file directly in your browser, or serve it over HTTP:
 
-```shell
+```bash
 bundle exec rackup
-# visit http://localhost:9292
+# Then visit http://localhost:9292/presentation.html
 ```
 
-License
--------
+## License
 
-This tool is released under the [MIT license](https://github.com/chiku/presentation/blob/master/LICENSE). Please refer to LICENSE for more details.
+This project is licensed under the [MIT License](https://github.com/chiku/presentation/blob/master/LICENSE).
 
-remark is released under [MIT license](https://github.com/gnab/remark/blob/develop/LICENSE).
+remark is also released under the [MIT License](https://github.com/gnab/remark/blob/develop/LICENSE).
